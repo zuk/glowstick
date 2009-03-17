@@ -1,26 +1,47 @@
 glowstick
-    by FIX (your name)
-    FIX (url)
-
-== DESCRIPTION:
-  
-FIX (describe your package)
+    by mojombo http://github.com/mojombo/glowstick
 
 == FEATURES/PROBLEMS:
   
-* FIX (list of features or problems)
+  Can draw a line. In a window!
+  It does not yet glow.
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+  Simple line graph using OpenGL. In a window!
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+  You need the ruby-opengl gem. You may need some libs to get that working.
+  If so, these would be them: libgl1-mesa-dev libglu1-mesa-dev libglut3-dev
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+  Clone the repo
+ 
+== SAMPLE
+
+  cd /path/to/repo
+  irb
+
+  $:.unshift(File.join('.', 'lib'))
+  require 'lib/glowstick'
+  Glowstick::VERSION
+  graph = Glowstick::Graph.new
+  graph.data = 12, 14, 17, 16, 11
+  glow = Glowstick.new(nil)
+  glow.start
+  # Press "ESC" to exit
+
+== OUTPUT:
+
+  http://skitch.com/jeffrafter/bekw3/glowstick
+
+  <div class="thumbnail">
+    <a href="http://skitch.com/jeffrafter/bekw3/glowstick">
+      <img src="http://img.skitch.com/20090317-xkt5wgbsg92n1btawygd2c1spm.preview.jpg" alt="Glowstick" />
+    </a>
+  </div>
 
 == LICENSE:
 
