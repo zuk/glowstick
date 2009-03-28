@@ -29,12 +29,38 @@ class Glowstick
     def draw
       glColor3f(*@color)
       
+      draw_data
+    end
+    
+    
+    protected
+    
+    def draw_data
       i = 0
         
       @data.each_cons(2) do |a|
         line(i, a[0], i + 1, a[1])
         i += 1
       end
+    end
+    
+    def draw_string(str, x, y, font = Glut::GLUT_BITMAP_HELVETICA_12)
+      glRasterPos(x, y);
+      (0..str.length-1).each do |i|
+        glutBitmapCharacter(font, str[i]);
+      end
+    end
+    
+    def width_of_string(str, font = Glut::GLUT_BITMAP_HELVETICA_12)
+      # can't get this to work :(
+      #glutBitmapLength(str, font)
+      return str.length * 0.06
+    end
+    
+    def height_of_string(str, font = Glut::GLUT_BITMAP_HELVETICA_12)
+      # can't get this to work :(
+      #glutBitmapHeight(str, font)
+      return (str.count("\n")+1) * 0.5
     end
     
     def line(x1, y1, x2, y2)
